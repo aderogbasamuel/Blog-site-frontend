@@ -398,6 +398,7 @@ header {
     color: var(--accent);
     font-size: .8rem;
     font-weight: 700;
+   
 }
 
 .card .text .head {
@@ -420,13 +421,16 @@ header {
     padding: 16px;
     border: none;
     border-radius: 16px;
-    background: #00d9ff;
+    background: #00D8FF;
     border: 3px solid black;
     font-weight: 800;
     font-size: 1rem;
     box-shadow: 4px 4px 0px black;
     cursor: pointer;
+    width: 100%;
+    text-decoration: none;
     transition: .2s ease;
+    color: #FFFFFF;
 }
 
 .card button:hover {
@@ -460,3 +464,10 @@ header {
         width: 220px;
     }
 }
+
+
+
+
+
+
+

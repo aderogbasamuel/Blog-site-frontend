@@ -13,11 +13,21 @@ SystemJS.config({
     }
   },
   map: {
-    'plugin-babel':          'systemjs-plugin-babel@latest/plugin-babel.js',
-    'systemjs-babel-build':  'systemjs-plugin-babel@latest/systemjs-babel-browser.js',
-    'react':                 'react@18.3.1/umd/react.development.js',
-    'react-dom':             'react-dom@18.3.1/umd/react-dom.development.js'
-  },
+  'plugin-babel':
+    'systemjs-plugin-babel@latest/plugin-babel.js',
+
+  'systemjs-babel-build':
+    'systemjs-plugin-babel@latest/systemjs-babel-browser.js',
+
+  'react':
+    'react@18.3.1/umd/react.development.js',
+
+  'react-dom':
+    'react-dom@18.3.1/umd/react-dom.development.js',
+
+  'react-router-dom':
+'https://cdn.jsdelivr.net/npm/react-router-dom@5.3.4/umd/react-router-dom.min.js'
+},
   transpiler: 'plugin-babel'
 });
 
