@@ -1,7 +1,9 @@
 import React from 'react';
 import {Link} from "react-router-dom"
 import {useParams} from 'react-router-dom'
+import formatDate from '../utils/formatDate.js'
 const { useState, useEffect } = React;
+
 export default function BlogPage(){
   const {id}= useParams()
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -63,7 +65,7 @@ const fetchPost = async () => {
   <div className="post-meta">
 
     <span>
-      {blog.createdAt}
+      {formatDate(blog.createdAt)}
     </span>
 
     <span>•</span>
