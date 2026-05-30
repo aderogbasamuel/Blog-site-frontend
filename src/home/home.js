@@ -80,7 +80,8 @@ function BlogCard({ blog }) {
             {blog.title}
           </h3>
           <div className="subtext">
-            {truncateText(blog.body,100)}
+           
+            <div dangerouslySetInnerHTML={{ __html: truncateText(blog.body,100) }} />
           </div>
         </div>
       </div>

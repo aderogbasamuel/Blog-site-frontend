@@ -85,9 +85,8 @@ const fetchPost = async () => {
 
   <article className="post-content">
 
-    <p>
-      {blog.body}
-    </p>
+    
+      <div dangerouslySetInnerHTML={{ __html: blog.body }} />
 
   </article>
 
