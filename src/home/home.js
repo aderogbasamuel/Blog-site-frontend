@@ -71,7 +71,7 @@ function BlogCard({ blog }) {
           </div>
           |
           <div className="title">
-           {blog.category}
+           _{blog.category}
           </div>
         </div>
         
