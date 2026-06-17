@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 const { useState, useEffect } = React;
 
-function Header() {
+function Header({ darkMode, setDarkMode }) {
   
   const [openMenu, setOpenMenu] = useState(false);
+  
   
   return (
     
@@ -13,11 +14,16 @@ function Header() {
   <div className="logo">
     <span className="prompt">{">"}</span> sam.exe_
   </div>
+  <div className="flex">
   <div
     className="menu-btn"
     onClick={() => setOpenMenu(!openMenu)}
   >
     {openMenu ? "✕" : "☰"}
+  </div>
+        <button onClick={() => setDarkMode(!darkMode)} className="theme-toggle">
+  {darkMode ? "☀️" : "🌙"}
+  </button>
   </div>
   <nav className={openMenu ? "nav active" : "nav"}>
     <a href="">Logs</a>
@@ -118,12 +124,22 @@ function Blogs() {
 }
 
 function Home() {
+  const [darkMode, setDarkMode] = useState(() => { return localStorage.getItem("theme") === "dark" });
+  useEffect(() => {
+    if (darkMode) {
+      localStorage.setItem("theme", "dark");
+    }
+    else {
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode])
+  
   return (
-    <div>
+    <div className={darkMode ? "dark":""}>
       <div className="herosec">
     <div className="herograd">
 
-      <Header/>
+      <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
 <section className="hero">
   <div className="hero-tag">
     PERSONAL TECH • DIGITAL THOUGHTS • INNOVATION

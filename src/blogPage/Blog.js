@@ -40,8 +40,18 @@ const fetchPost = async () => {
     console.log(e)
   }
 }
+const [darkMode, setDarkMode]=useState(()=> {return localStorage.getItem("theme")==="dark"} );
+  useEffect(()=>{
+    if (darkMode) {
+      localStorage.setItem("theme","dark");
+    }
+    else {
+      localStorage.setItem("theme","light");
+    }
+  },[darkMode]
+  )
   return(
-    <div>
+    <div className={darkMode ? "dark":""}>
     <div className="progress-bar">
   <div
     className="progress-fill"
